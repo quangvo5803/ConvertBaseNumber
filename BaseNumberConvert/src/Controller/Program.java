@@ -54,12 +54,12 @@ public class Program extends Menu<String> {
                 switch(n){
                     case 1:{
                         String result = c.convertHexaToDecimal(num.getValue());
-                        System.out.println(result);
-                        break;
+                        System.out.println("Hexadecimal " + num.getValue() + " to Decimal: " + result);
+                        break; 
                     }
                     case 2:{
                         String result = c.convertHexaTiBinary(num.getValue());
-                        System.out.println(result);
+                        System.out.println("Hexadecimla " + num.getValue() + " to Binary " + result);
                         break;
                     }
                     case 3:{
@@ -84,12 +84,12 @@ public class Program extends Menu<String> {
                 switch(n){
                     case 1:{
                         String result = c.convertDecimalToHexa(num.getValue());
-                        System.out.println(result);
+                        System.out.println("Decimal" + num.getValue() + " to Hexadecimal: " + result);
                         break;
                     }
                     case 2:{
                         String result = c.convertDecimalToBinary(num.getValue());
-                        System.out.println(result);
+                        System.out.println("Decimal " + num.getValue() + " to Binary: " + result);
                         break;
                     }
                     case 3:{
@@ -105,6 +105,33 @@ public class Program extends Menu<String> {
     //-------------------------------------------------------------------------------------
     public void convertFromBinary(Number num){
          final String[] binChoice = {"Convert to Decimal","Convert to Hexadecimal","Exit"};
+         class convertFromBinary extends Menu<String>{
+            public convertFromBinary(){
+                super("Convert From Binary",binChoice);
+            }
+
+            @Override
+            public void execute(int n){
+                switch(n){
+                    case 1:{
+                        String result = c.convertBinaryToDecimal(num.getValue());
+                        System.out.println("Binary " + num.getValue() + " to Decimal " + result);
+                        break;
+                    }
+                    case 2:{
+                        String result = c.convertBinaryToHexa(num.getValue());
+                        System.out.println("Binary " + num.getValue() + " to Decimal " + result);
+                        break;
+                    }
+                    case 3:{
+                        System.exit(0);
+                        break;
+                    }
+                }
+            }
+         }
+         convertFromBinary cb = new convertFromBinary();
+         cb.run();
     }
 
 

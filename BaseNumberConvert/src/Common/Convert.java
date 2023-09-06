@@ -17,7 +17,7 @@ public class Convert {
         int dec = Integer.parseInt(decimal);
         while(dec !=0 ){
             hexa = hexDigits[dec%16] + hexa;
-            dec /= 10;
+            dec /= 16;
         }
         return hexa;
     }
